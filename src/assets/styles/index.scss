@@ -1,0 +1,261 @@
+@import "vars/_colors.scss";
+@import "vars/_variables.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.app {
+  &__header {
+    box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &__link {
+    color: $secondary;
+    text-decoration: none;
+  }
+}
+
+
+.card {
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+
+  &__header {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+  }
+}
+
+.header, .headerPublic {
+  width: 100%;
+  height: $header-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 0 30px;
+
+  &__wrapper {
+    max-width: $page-max-width;
+    height: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    img {
+      max-height: 50px;
+    }
+  }
+
+  ul {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+.sidebar {
+  height: $sidebar-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    max-width: $page-max-width;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    height: calc(100% - 2px);
+
+    &:hover {
+      border-bottom: 2px solid $primary;
+      color: $primary;
+    }
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.layoutPublic, .layoutProtected, .layoutAdmin {
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.layoutPublic, .layoutAdmin {
+  background: radial-gradient(35.17% 69.56% at 50% 50%, rgba(11, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+  , linear-gradient(135.61deg, rgba(175, 187, 199, 0.112) 49.66%, rgba(0, 0, 0, 0) 84.61%), linear-gradient(295.39deg, rgba(162, 151, 112, 0.38) 43.02%, rgba(0, 0, 0, 0) 88.28%), #323D57;
+
+  .main {
+    min-height: calc(100vh - $header-height - $footer-height);
+  }
+}
+
+.layoutProtected {
+  .main {
+    min-height: calc(100vh - $header-height - $sidebar-height - $footer-height);
+  }
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: $footer-height;
+  background-color: white;
+
+  &__wrapper {
+    max-width: $page-max-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    flex-grow: 1;
+    height: 100%;
+  }
+}
+
+.signUp, .login {
+  max-width: 400px;
+  padding: 50px 80px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+  }
+
+  &__label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 250ms ease-in-out, top 250ms ease-in-out;
+  }
+
+  &__input {
+    padding: 0.8rem 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  input {
+    background: white 0 0 no-repeat padding-box;
+    box-shadow: 0 3px 3px $grey7;
+    outline: none;
+
+    &:focus, &:active {
+      outline: none;
+      box-shadow: 0 5px 10px $secondary;
+    }
+
+    &:focus + .form__label, &:valid + .form__label, &:active + .form__label {
+      color: $secondary;
+      background-color: $white;
+      font: normal normal normal 14px Lato;
+    }
+
+    &:focus + .form__label, &:valid + .form__label, &:active + .form__label {
+      top: 0;
+      padding: 0 0.3rem;
+      border-radius: 10px;
+    }
+  }
+
+  input::placeholder {
+    padding-left: 0;
+  }
+
+  .button__primary {
+    margin-top: 15px;
+  }
+}
+
+.button__primary {
+  background: $secondary;
+  border-radius: 10px;
+  color: white;
+  padding: 0.8rem 0.8rem;
+  border: 1px solid black;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+
+  &:focus, &:active, &:hover {
+    box-shadow: 0 5px 10px $secondary;
+  }
+}
+
+
