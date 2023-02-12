@@ -42,7 +42,6 @@ body {
 }
 
 .header, .headerPublic {
-  width: 100%;
   height: $header-height;
   display: flex;
   justify-content: center;
@@ -138,6 +137,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(35.17% 69.56% at 50% 50%, rgba(11, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    , linear-gradient(135.61deg, rgba(175, 187, 199, 0.112) 49.66%, rgba(0, 0, 0, 0) 84.61%), linear-gradient(295.39deg, rgba(162, 151, 112, 0.38) 43.02%, rgba(0, 0, 0, 0) 88.28%), #323D57;
   }
 }
 
