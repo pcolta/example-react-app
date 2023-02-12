@@ -1,0 +1,16 @@
+{
+  "Regulations": "Regulamin",
+  "Register": "Zarejestruj się",
+  "UserName": "Login",
+  "Name": "Imię",
+  "Last name": "Nazwisko",
+  "Email": "Email",
+  "Password": "Hasło",
+  "Sign up error": "Błąd rejestracji!",
+  "Send": "Wyślij",
+  "Go back to login": "Wróć do logowania",
+  "Log in": "Zaloguj się",
+  "Login": "Zaloguj",
+  "Bad login/password": "Zły login/hasło",
+  "If you don't have an account yet": "Jeśli nie masz jeszcze konta "
+}
